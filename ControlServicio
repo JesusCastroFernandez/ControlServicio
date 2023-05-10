@@ -1,0 +1,57 @@
+package trenes.controladores;
+
+public abstract class ControlServicio {
+    private int idControlServicio;
+    private String nombreControlServicio;
+    private String tipoControlServicio;
+    private static int numControlesConfigurados = 0;
+
+    public ControlServicio(String nombreControlServicio) {
+        this.idControlServicio = numControlesConfigurados;
+        this.nombreControlServicio = nombreControlServicio;
+        this.tipoControlServicio = "Desconocido";
+        numControlesConfigurados++;
+    }
+
+    public ControlServicio() {
+        this.idControlServicio = numControlesConfigurados;
+        this.nombreControlServicio = "Desconocido";
+        this.tipoControlServicio = "Desconocido";
+        numControlesConfigurados++;
+    }
+
+    public int getIdControlServicio() {
+        return idControlServicio;
+    }
+
+    public String getNombreControlServicio() {
+        return nombreControlServicio;
+    }
+
+    public String getTipoControlServicio() {
+        return tipoControlServicio;
+    }
+
+    public void setIdControlServicio(int idControlServicio) {
+        this.idControlServicio = idControlServicio;
+    }
+
+    public void setNombreControlServicio(String nombreControlServicio) {
+        this.nombreControlServicio = nombreControlServicio;
+    }
+
+    public void setTipoControlServicio(String tipoControlServicio) {
+        this.tipoControlServicio = tipoControlServicio;
+    }
+
+    public String toString() {
+        return "ControlServicio:\n" +
+                "\tIdentificador: " + this.idControlServicio + "\n" +
+                "\tNombre Servicio: " + this.nombreControlServicio + "\n" +
+                "\tTipo de Servicio: " + this.tipoControlServicio;
+    }
+
+    public static int getNumControlesConfigurados() {
+        return numControlesConfigurados;
+    }
+}
